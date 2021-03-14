@@ -5,7 +5,7 @@ import java.text.ParseException;
 
 public class ACBMain {
 
-	public static void main(String[] args) throws IOException, SQLException {
+	public static void main(String[] args) throws IOException, SQLException, ParseException {
 		ACBMenu menu = new ACBMenu();
 		
 		ConnectionFactory connectionFactory = ConnectionFactory.getInstance();
@@ -75,7 +75,7 @@ public class ACBMain {
 
 			case 9:
 				// dbaccessor.desassignaArticleARevista(conn);
-				System.out.println("Opción no disponible");
+				matchController.insertStats();
 				break;
 
 			case 10:
