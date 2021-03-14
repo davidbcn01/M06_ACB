@@ -77,7 +77,9 @@ public class MatchController {
             }
 
         }
+        connection.commit();
     }
+
 
     public boolean searchGame(String local, String away, Date matchDate) throws SQLException {
         Statement st = connection.createStatement();
@@ -91,6 +93,7 @@ public class MatchController {
             System.out.println("Partit trobat");
             return true;
         }
+
     }
 
 
@@ -128,6 +131,7 @@ public class MatchController {
         pst.setInt(21, Integer.parseInt(array[20]));
         pst.setInt(22, Integer.parseInt(array[21]));
         pst.executeUpdate();
+        connection.commit();
     }
 
     public void updateMatchStats(String[] array) throws SQLException, NumberFormatException, IOException, ParseException {
@@ -163,6 +167,7 @@ public class MatchController {
         pst.setDate(21, data);
         pst.setString(22, array[3]);
         pst.executeUpdate();
+        connection.commit();
     }
 
 }
